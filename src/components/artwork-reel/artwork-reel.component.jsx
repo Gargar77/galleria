@@ -2,13 +2,14 @@ import React from 'react';
 
 import './artwork-reel.styles.scss';
 import artworks from '../../data.json';
+import ArtThumbnail from '../art-thumbnail/art-thumbnail.component';
 
 class ArtworkReel extends React.Component {
     state = {
         selectedArtwork:null
     }
     constructArtThumbnail(data,id) {
-        return <div key={id}>{data.name}</div>
+        return <ArtThumbnail key={id} data={data}/>
     }
 
     render() {
