@@ -10,3 +10,6 @@ button {
   border: none;
   background-color: transparent;
 }
+button,h1,h2,h3,p,a {
+  font-family: 'Libre Baskerville', serif;
+}
