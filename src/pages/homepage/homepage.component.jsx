@@ -2,7 +2,6 @@
 
  import './homepage.styles.scss';
 
-
  class Homepage extends React.Component {
      render() {
          return (
@@ -11,4 +10,4 @@
      }
  }
 
- export default Homepage;
+ export default Homepage;  
