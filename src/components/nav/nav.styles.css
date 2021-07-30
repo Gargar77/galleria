@@ -8,6 +8,12 @@
  .main-nav svg {
      height: 40px;
  }
+ .main-nav button {
+     color: var(--dark-gray);
+     text-transform: uppercase;
+     letter-spacing: 1.93px;
+     font-size: 0.5rem;
+ }
  .nav-container div {
      margin-top: 10px;
      height: 0.5px;
