@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './artwork-reel.styles.css';
-import artworks from '../../data.json';
 import ArtThumbnail from '../art-thumbnail/art-thumbnail.component';
 import Masonry from 'react-masonry-css';
 class ArtworkReel extends React.Component {
@@ -19,7 +18,7 @@ class ArtworkReel extends React.Component {
 
     render() {
         const reel = [];
-        artworks.forEach( (data,index) => reel.push(this.constructArtThumbnail(data,index)));
+        this.props.artworks.forEach( (data,index) => reel.push(this.constructArtThumbnail(data,index)));
         let {width} = this.getWindowDimensions()
         let columnCount;
         if (width < 700) {
