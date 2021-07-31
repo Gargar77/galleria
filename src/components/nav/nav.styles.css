@@ -13,10 +13,21 @@
      text-transform: uppercase;
      letter-spacing: 1.93px;
      font-size: 0.5rem;
+     cursor: pointer;
+     transition: color ease-in 200ms;
+ }
+ .main-nav button:hover {
+     color: black;
  }
  .nav-container div {
      margin-top: 10px;
      height: 0.5px;
      width: 100%;
      background-color: var(--med-gray);
+ }
+
+ @media screen and (min-width:700px) {
+     .main-nav {
+         padding: 1%;
+     }
  }
