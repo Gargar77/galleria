@@ -5,7 +5,8 @@ const ArtThumbnail = ({data}) => {
     <section className="art-thumbnail">
         <div className="image-container">
             <img src={data.images.thumbnail} alt=""></img>
-            <div className="screen"></div>
+            <div className="screen dark"></div>
+            <div className="screen light"></div>
         </div>
         <div className="thumbnail-text">
             <h1>{data.name}</h1>
