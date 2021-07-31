@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './artwork-reel.styles.css';
 import ArtThumbnail from '../art-thumbnail/art-thumbnail.component';
@@ -13,7 +14,7 @@ class ArtworkReel extends React.Component {
     }
    
     constructArtThumbnail(data,id) {
-        return <ArtThumbnail key={id} data={data}/>
+        return <Link key={id} to={`/artwork/${id}`}><ArtThumbnail data={data}/></Link>
     }
 
     render() {

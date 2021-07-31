@@ -8,18 +8,25 @@
  import ArtworkReel from '../../components/artwork-reel/artwork-reel.component';
  import {Route, Switch} from 'react-router-dom'
  class Homepage extends React.Component {
-
+    state = {
+        activeArtworkId:0
+    }
+    
+    updateActiveArtwork(id) {
+        this.setState({
+            ...this.state,
+            activeArtworkId:id
+        })
+    }
      render() {
          return (
              <main className="homepage">
                  <Nav/>
                 <Switch>
-                    <Route path="/" exact><ArtworkReel artworks={artworksData}/></Route>
-                    <Route path="/artwork"><ArtworkViewer artworks={artworksData}/></Route>
+                    <Route path="/" exact><ArtworkReel artworks={artworksData} update={this.updateActiveArtwork}/></Route>
+                    <Route path="/artwork/:id"><ArtworkViewer artworks={artworksData} update={this.updateActiveArtwork}/></Route>
                 </Switch>
              </main>
-            
-         
         )
      }    
  }
