@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-
+import {ReactComponent as ViewImageSvg} from '../../assets/shared/icon-view-image.svg'
 import './artworkViewer.styles.scss'
 
 const ArtworkViewer = ({update,artworks}) => {
@@ -9,7 +9,11 @@ const ArtworkViewer = ({update,artworks}) => {
     return (
         <article className="artwork">
             <div className="artwork-image-container">
-                <img src={artwork.images.gallery} alt={`${artwork.name}`}/>
+                <div className="lightbox-button">
+                    <ViewImageSvg className="view-image-svg"/>
+                    <p>VIEW IMAGE</p>
+                </div>
+                <img src={artwork.images.hero.small} alt={`${artwork.name}`}/>
             </div>
             <div className="artwork-header">
                 <h1 className="artwork-name">{artwork.name}</h1>
