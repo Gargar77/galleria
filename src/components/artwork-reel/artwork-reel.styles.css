@@ -1,13 +1,7 @@
 
-.artwork-reel {
-    margin-left: 0;
-}
 @media screen and (min-width:750px) {
     .artwork-reel {
         display: flex;
         justify-content: center;
-    }
-    .reel-column {
-        margin-left: -15px; /* gutter size offset */
     }
 }
