@@ -21,7 +21,6 @@ class ArtworkReel extends React.Component {
         const reel = [];
         artworks.forEach( (data,index) => reel.push(this.constructArtThumbnail(data,index)));
         let {width} = this.getWindowDimensions()
-        console.log(width);
         let columnCount;
         if (width < 700) {
             columnCount = 1;
@@ -30,7 +29,6 @@ class ArtworkReel extends React.Component {
         } else {
             columnCount = 4;
         }
-        console.log(columnCount)
             return (<Masonry 
             className="artwork-reel"
             columnClassName="reel-column"
