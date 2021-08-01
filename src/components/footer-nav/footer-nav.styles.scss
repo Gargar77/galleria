@@ -28,6 +28,9 @@
     justify-content: space-between;
     width: 22%;
 }
+.footer-buttons svg {
+    cursor: pointer;
+}
 footer {
   position: fixed;
   bottom: 0;
@@ -38,4 +41,13 @@ footer {
 
 .disabled  g{
     stroke: var(--med-gray);
+}
+
+@media screen and (min-width:720px) {
+    .footer-content {
+        padding: 1% 4%;
+    }
+    .footer-buttons {
+        width: 8%;
+    }
 }
