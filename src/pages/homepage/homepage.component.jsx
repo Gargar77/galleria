@@ -11,10 +11,28 @@
 
  
  class Homepage extends React.Component {
-    state = {
-        activeArtworkId:null
+    constructor(props) {
+        super(props);
+        this.state = {
+            activeArtworkId:null,
+            activeListener:null
+        }
+        if (this.state.activeListener === null) {
+            const updateDimensions = ()=> {
+                const {innerWidth:width,innerHeight:height} = window;
+                this.setState({
+                    ...this.state,
+                    windowDimensions: {
+                        currWidth:width,
+                        currHeight:height
+                    }
+                })
+            }
+            window.addEventListener('resize',updateDimensions)
+            this.state.activeListener = true;
+        }
     }
-    
+ 
     updateActiveArtwork(id) {
         this.setState({
             ...this.state,
