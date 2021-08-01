@@ -11,7 +11,7 @@
 
  class Homepage extends React.Component {
     state = {
-        activeArtworkId:0
+        activeArtworkId:null
     }
     
     updateActiveArtwork(id) {
@@ -23,11 +23,11 @@
      render() {
          return (
              <main className="homepage">
-                 <Nav/>
+                 <Nav activeArtwork={this.state.activeArtworkId} update={this.updateActiveArtwork.bind(this)}/>
                 <Switch>
-                    <Route path="/" exact><ArtworkReel artworks={artworksData} update={this.updateActiveArtwork}/></Route>
+                    <Route path="/" exact><ArtworkReel artworks={artworksData} update={this.updateActiveArtwork.bind(this)}/></Route>
                     <Route path="/artwork/:id">
-                        <ArtworkViewer artworks={artworksData} update={this.updateActiveArtwork}/>
+                        <ArtworkViewer artworks={artworksData} update={this.updateActiveArtwork.bind(this)}/>
                         <FooterNav artworks={artworksData}/>
                     </Route>
                 </Switch>

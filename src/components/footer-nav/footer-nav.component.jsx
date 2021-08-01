@@ -15,7 +15,6 @@ const FooterNav = ({artworks}) => {
         currentProgress = 100;
     } else {
         currentProgress = Math.ceil(((id + 1) / numArtworks) * 100);
-        console.log(currentProgress)
     }
     return (
         <footer>
