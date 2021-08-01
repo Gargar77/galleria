@@ -1,0 +1,29 @@
+.progress-line,.active-line {
+    width: 100%;
+    height: 2px;
+}
+.progress-line {
+    background-color: var(--med-gray);
+}
+.active-line {
+    background-color: black;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 5%;
+    align-items: center;
+}
+
+.footer-text {
+    p {
+        color: var(--dark-gray);
+        font-size: 0.5rem;
+        padding-top: 5px;
+    }
+}
+.footer-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 22%;
+}
