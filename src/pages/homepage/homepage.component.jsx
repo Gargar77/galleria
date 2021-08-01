@@ -35,18 +35,20 @@
     }
  
     updateActiveArtwork(id) {
+        window.location.hash = `#${id}`
         this.setState({
             ...this.state,
             activeArtworkId:id
         })
     }
      render() {
+      
          return (
              <main className="homepage">
                  <Nav activeArtwork={this.state.activeArtworkId} update={this.updateActiveArtwork.bind(this)}/>
                 <Switch>
                     <Route path="/" exact><ArtworkReel artworks={artworksData} update={this.updateActiveArtwork.bind(this)}/></Route>
-                    <Route path="/artwork/:id">
+                    <Route path="/artwork">
                         <ArtworkViewer 
                             artworks={artworksData} 
                             activeId={this.state.activeArtworkId} 

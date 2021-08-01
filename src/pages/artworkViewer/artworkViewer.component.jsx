@@ -18,7 +18,7 @@ class ArtworkViewer extends React.Component {
   render() {
       let currId = this.props.activeId;
     if (currId === null) {
-        let id = window.location.pathname.split('/')[2];
+        let id = window.location.hash[1];
         currId = id;
     }
     const artwork = this.props.artworks[currId];

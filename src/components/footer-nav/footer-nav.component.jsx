@@ -7,7 +7,7 @@ import {ReactComponent as NextButton} from '../../assets/shared/icon-next-button
 const FooterNav = ({artworks,update,activeId}) => {
     let id = activeId;
     if (id === null) {
-        let currId = window.location.pathname.split('/')[2];
+        let currId = window.location.hash[1];
         id = parseInt(currId);
     }
     const numArtworks = artworks.length;
@@ -28,6 +28,8 @@ const FooterNav = ({artworks,update,activeId}) => {
            update(id-1);
        }
     }
+      
+
     return (
         <footer>
             <div className="progress-line"></div>
