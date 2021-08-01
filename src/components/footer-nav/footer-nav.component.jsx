@@ -4,7 +4,7 @@ import './footer-nav.styles.scss';
 import {ReactComponent as BackButton} from '../../assets/shared/icon-back-button.svg';
 import {ReactComponent as NextButton} from '../../assets/shared/icon-next-button.svg';
 
-const FooterNav = ({artworks,update,activeId}) => {
+const FooterNav = ({artworks,update,activeId,navigate}) => {
     let id = activeId;
     if (id === null) {
         let currId = window.location.hash[1];
@@ -23,13 +23,19 @@ const FooterNav = ({artworks,update,activeId}) => {
     }
     const move = (direction) => {
        if (direction === 'next' && id < numArtworks -1) {
-           update(id+1);
+           navigate(true,'left');
+           window.setTimeout(()=> {
+               update(id+1);
+           },300)
        } else if (direction === "prev" && id > 0){
-           update(id-1);
+            navigate(true,'right')           
+            window.setTimeout(()=> {
+                update(id-1);
+            },300)
+
        }
     }
       
-
     return (
         <footer>
             <div className="progress-line"></div>

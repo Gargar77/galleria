@@ -1,7 +1,7 @@
  import React from 'react';
  import {Route, Switch} from 'react-router-dom'
 
- import './homepage.styles.scss';
+ import './homepage.styles.css';
 
  import Nav from '../../components/nav/nav.component';
  import ArtworkViewer from '../artworkViewer/artworkViewer.component';
@@ -16,7 +16,9 @@
         this.state = {
             activeArtworkId:null,
             activeListener:null,
-            windowDimensions:null
+            windowDimensions:null,
+            isNavigating:false,
+            navigationDirection:""
         }
         if (this.state.activeListener === null) {
             const updateDimensions = ()=> {
@@ -38,11 +40,19 @@
         window.location.hash = `#${id}`
         this.setState({
             ...this.state,
-            activeArtworkId:id
+            activeArtworkId:id,
+            isNavigating:false
         })
     }
+    toggleNavigation(bool,direction) {
+       this.setState((state)=>({
+           ...state,
+           isNavigating:bool,
+           navigationDirection:direction
+       }))
+    }
+
      render() {
-      
          return (
              <main className="homepage">
                  <Nav activeArtwork={this.state.activeArtworkId} update={this.updateActiveArtwork.bind(this)}/>
@@ -53,11 +63,15 @@
                             artworks={artworksData} 
                             activeId={this.state.activeArtworkId} 
                             update={this.updateActiveArtwork.bind(this)}
+                            isNavigating={this.state.isNavigating}
+                            direction={this.state.navigationDirection}
                             />
                         <FooterNav 
                             artworks={artworksData} 
                             activeId={this.state.activeArtworkId} 
-                            update={this.updateActiveArtwork.bind(this)}/>
+                            update={this.updateActiveArtwork.bind(this)}
+                            navigate={this.toggleNavigation.bind(this)}
+                            />
                     </Route>
                 </Switch>
              </main>

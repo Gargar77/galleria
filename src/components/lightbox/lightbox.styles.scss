@@ -19,6 +19,9 @@
     flex-direction: column;
     animation-name: appear;
     animation-duration: 200ms;
+    @media screen and (min-width:720px) {
+        left: 0;
+    }
 }
 
 .lightbox-image-container {
@@ -28,6 +31,11 @@
     animation-delay: 300ms;
     animation-duration: 300ms;
     animation-fill-mode: forwards;
+    @media screen and (min-width:720px) {
+        height: 100%;
+        width: fit-content;
+        margin: 0 auto;
+    }
 }
 
 .lightbox-close-button {
@@ -36,4 +44,8 @@
     color: white;
     margin: 10% 0;
     align-self: flex-end;
+    cursor: pointer;
+    @media screen and (min-width:720px) {
+        margin: 0;   
+    }
 }

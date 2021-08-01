@@ -6,6 +6,7 @@ import LightBox from '../../components/lightbox/lightbox.component';
 class ArtworkViewer extends React.Component {
         state = {
             lightboxIsActive:false,
+            isUnmounting:false
         }
 
     toggleLightbox(bool) {
@@ -14,21 +15,38 @@ class ArtworkViewer extends React.Component {
             lightboxIsActive:bool
         })
     }
-  render() {
-      let currId = this.props.activeId;
-    if (currId === null) {
-        let id = window.location.hash[1];
-        currId = id;
+    getArtwork() {
+        let currId = this.props.activeId;
+        if (currId === null) {
+            let id = window.location.hash[1];
+            currId = id;
+        }
+        return this.props.artworks[currId];
     }
-    const artwork = this.props.artworks[currId];
+
+  render() {
+    const artwork = this.getArtwork();
     let lightbox;
     if (this.state.lightboxIsActive) {
         lightbox = (
             <LightBox artwork={artwork} toggle={()=> this.toggleLightbox(false)}/>
         )
     }
+    let navAnimation;
+    if (this.props.direction === 'right') {
+        navAnimation ={animation:'left-in 200ms ease-out'}
+    } else {
+        navAnimation = {animation:'right-in 200ms ease-out'}
+    }
+    if (this.props.isNavigating) {
+        if (this.props.direction === 'right') {
+            navAnimation = {animation:'right-out 200ms ease-in forwards'}
+        } else {
+            navAnimation = {animation:'left-out 200ms ease-in forwards'}
+        }
+    }
     return (
-        <article className="artwork">
+        <article className="artwork" style={navAnimation}>
             {lightbox}
             <div className="artwork-image-container">
                 <div className="lightbox-button" onClick={()=> this.toggleLightbox(true)}>
