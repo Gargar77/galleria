@@ -8,7 +8,6 @@
  import artworksData from '../../data.json';
  import ArtworkReel from '../../components/artwork-reel/artwork-reel.component';
  import FooterNav from '../../components/footer-nav/footer-nav.component';
-
  class Homepage extends React.Component {
     state = {
         activeArtworkId:null
