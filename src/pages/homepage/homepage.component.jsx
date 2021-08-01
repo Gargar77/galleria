@@ -15,7 +15,8 @@
         super(props);
         this.state = {
             activeArtworkId:null,
-            activeListener:null
+            activeListener:null,
+            windowDimensions:null
         }
         if (this.state.activeListener === null) {
             const updateDimensions = ()=> {
@@ -46,8 +47,15 @@
                 <Switch>
                     <Route path="/" exact><ArtworkReel artworks={artworksData} update={this.updateActiveArtwork.bind(this)}/></Route>
                     <Route path="/artwork/:id">
-                        <ArtworkViewer artworks={artworksData} activeId={this.state.activeArtworkId} update={this.updateActiveArtwork.bind(this)} artworkId={this.state.activeArtworkId}/>
-                        <FooterNav artworks={artworksData} activeId={this.state.activeArtworkId} update={this.updateActiveArtwork.bind(this)}/>
+                        <ArtworkViewer 
+                            artworks={artworksData} 
+                            activeId={this.state.activeArtworkId} 
+                            update={this.updateActiveArtwork.bind(this)}
+                            />
+                        <FooterNav 
+                            artworks={artworksData} 
+                            activeId={this.state.activeArtworkId} 
+                            update={this.updateActiveArtwork.bind(this)}/>
                     </Route>
                 </Switch>
              </main>
