@@ -8,6 +8,8 @@
  import artworksData from '../../data.json';
  import ArtworkReel from '../../components/artwork-reel/artwork-reel.component';
  import FooterNav from '../../components/footer-nav/footer-nav.component';
+
+ 
  class Homepage extends React.Component {
     state = {
         activeArtworkId:null
@@ -26,8 +28,8 @@
                 <Switch>
                     <Route path="/" exact><ArtworkReel artworks={artworksData} update={this.updateActiveArtwork.bind(this)}/></Route>
                     <Route path="/artwork/:id">
-                        <ArtworkViewer artworks={artworksData} update={this.updateActiveArtwork.bind(this)}/>
-                        <FooterNav artworks={artworksData}/>
+                        <ArtworkViewer artworks={artworksData} activeId={this.state.activeArtworkId} update={this.updateActiveArtwork.bind(this)} artworkId={this.state.activeArtworkId}/>
+                        <FooterNav artworks={artworksData} activeId={this.state.activeArtworkId} update={this.updateActiveArtwork.bind(this)}/>
                     </Route>
                 </Switch>
              </main>

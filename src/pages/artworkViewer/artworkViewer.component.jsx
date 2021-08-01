@@ -1,25 +1,38 @@
-import React, {useState} from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 
 import {ReactComponent as ViewImageSvg} from '../../assets/shared/icon-view-image.svg'
 import './artworkViewer.styles.scss'
 import LightBox from '../../components/lightbox/lightbox.component';
-const ArtworkViewer = ({update,artworks}) => {
-    const [lightboxIsActive,toggleLightbox] = useState(false);
+class ArtworkViewer extends React.Component {
+        state = {
+            lightboxIsActive:false,
+        }
 
-    const {id} = useParams();
-    const artwork = artworks[id];
+    toggleLightbox(bool) {
+        this.setState({
+            ...this.state,
+            lightboxIsActive:bool
+        })
+    }
+
+  render() {
+      let currId = this.props.activeId;
+    if (currId === null) {
+        let id = window.location.pathname.split('/')[2];
+        currId = id;
+    }
+    const artwork = this.props.artworks[currId];
     let lightbox;
-    if (lightboxIsActive) {
+    if (this.state.lightboxIsActive) {
         lightbox = (
-            <LightBox artwork={artwork} toggle={()=> toggleLightbox(false)}/>
+            <LightBox artwork={artwork} toggle={()=> this.toggleLightbox(false)}/>
         )
     }
     return (
         <article className="artwork">
             {lightbox}
             <div className="artwork-image-container">
-                <div className="lightbox-button" onClick={()=>toggleLightbox(true)}>
+                <div className="lightbox-button" onClick={()=> this.toggleLightbox(true)}>
                     <ViewImageSvg className="view-image-svg"/>
                     <p>VIEW IMAGE</p>
                 </div>
@@ -39,6 +52,8 @@ const ArtworkViewer = ({update,artworks}) => {
            </div>
         </article>
     )
+  }
+    
 }
 
 export default ArtworkViewer;
