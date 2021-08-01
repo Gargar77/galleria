@@ -14,7 +14,6 @@ class ArtworkViewer extends React.Component {
             lightboxIsActive:bool
         })
     }
-
   render() {
       let currId = this.props.activeId;
     if (currId === null) {
