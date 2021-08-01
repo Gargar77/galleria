@@ -17,6 +17,13 @@
 .artwork {
     position: relative;
     left: 0vw;
+    margin-bottom: 15%;
+    @media screen and (min-width:700px) {
+        display: flex;
+        margin-top: 4%;
+        margin-bottom: 0;
+        padding: 0 2%;
+    }
 }
 .artwork-image-container {
     height: 20%;
@@ -102,12 +109,32 @@
         padding: 0;
         left: -5vw;
     }
+    @media screen and (min-width:700px) and (max-width:1100px) {
+        position: absolute;
+        top: 45vh;
+        padding: 0 20%;
+        .artwork-date {
+            font-size: 160px;
+            text-align: left;
+            position: relative;
+            left: -10vw;
+        }
+    }
+    @media screen and (min-width:700px) and (max-width:1100px) and (min-height:1100px) {
+        top: 57vh;
+    }
 }
 .artwork-date {
     text-align: right;
     font-size: 110px;
     color: var(--light-gray);
     z-index: 0;
+    @media screen and (min-width:700px) and (max-width:1100px) and (min-height:1100px) {
+        top: -50px;
+    }
+    @media screen and (max-width:375px) {
+        font-size: 80px;
+    }
 }
 .artwork-description {
     z-index: 1;
@@ -115,6 +142,9 @@
     margin-top: -9%;
     line-height: 28px;
     color: var(--dark-gray);
+    @media screen and (min-width:700px) and (max-width:1100px) {
+        margin-top: -20%;
+    }
 }
 .source-link {
     display: block;
@@ -127,10 +157,3 @@
     }
 }
 
-@media screen and (min-width:700px) {
-    .artwork {
-        display: flex;
-        margin-top: 4%;
-        padding: 0 2%;
-    }
-}

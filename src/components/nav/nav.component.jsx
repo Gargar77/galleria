@@ -14,7 +14,7 @@ const Nav = ({activeArtwork,update}) => {
         <div className="nav-container">
             <nav className="main-nav">
                 <Link to="/" onClick={()=> update(null)}><Logo/></Link>
-                <Link to={activeArtwork === null ? "/artwork/0" : "/"}>
+                <Link to={activeArtwork === null ? "/artwork#0" : "/"}>
                     {button}
                 </Link>
             </nav>
