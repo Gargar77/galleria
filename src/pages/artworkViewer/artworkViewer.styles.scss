@@ -76,3 +76,12 @@
       text-decoration: none;
     }
 }
+
+@media screen and (min-width:700px) {
+    .artwork {
+        display: flex;
+    }
+    .artwork-image-container {
+        padding: 0;
+    }
+}

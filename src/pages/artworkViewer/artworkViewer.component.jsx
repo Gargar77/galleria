@@ -36,7 +36,10 @@ class ArtworkViewer extends React.Component {
                     <ViewImageSvg className="view-image-svg"/>
                     <p>VIEW IMAGE</p>
                 </div>
-                <img src={artwork.images.hero.small} alt={`${artwork.name}`}/>
+                <picture>
+                    <source media="(min-width:900px)" srcSet={artwork.images.hero.large}/>
+                    <img src={artwork.images.hero.small} alt={artwork.name}/>
+                </picture>
             </div>
             <div className="artwork-header">
                 <h1 className="artwork-name">{artwork.name}</h1>
