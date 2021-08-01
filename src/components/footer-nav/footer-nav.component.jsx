@@ -38,8 +38,12 @@ const FooterNav = ({artworks,update,activeId}) => {
                     <p className="artwork-artist">{artwork.artist.name}</p>
                 </div>
                 <div className="footer-buttons">
-                    <BackButton onClick={()=>move('prev')}/>
-                    <NextButton onClick={()=>move('next')}/>
+                    <BackButton
+                        className={id === 0 ? 'disabled' : ""} 
+                        onClick={()=>move('prev')}/>
+                    <NextButton 
+                        className={id === numArtworks -1 ? 'disabled' : ""}
+                        onClick={()=>move('next')}/>
                 </div>
             </div>
         </footer>
