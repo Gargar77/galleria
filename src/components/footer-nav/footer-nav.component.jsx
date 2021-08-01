@@ -8,11 +8,12 @@ const FooterNav = ({artworks,update,activeId}) => {
     let id = activeId;
     if (id === null) {
         let currId = window.location.pathname.split('/')[2];
-        id = currId;
+        id = parseInt(currId);
     }
-    if (id <= 0) id = 0;
-    if (id >= artworks.lenght) id = artworks.length -1;
     const numArtworks = artworks.length;
+    if (id <= 0) id = 0;
+    if (id >= numArtworks) id = numArtworks -1;
+
     const artwork = artworks[id];
     let currentProgress;
     if (numArtworks === id + 1) {
@@ -20,7 +21,6 @@ const FooterNav = ({artworks,update,activeId}) => {
     } else {
         currentProgress = Math.ceil(((id + 1) / numArtworks) * 100);
     }
-
     const move = (direction) => {
        if (direction === 'next' && id < numArtworks -1) {
            update(id+1);
