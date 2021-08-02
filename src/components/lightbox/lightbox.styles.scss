@@ -37,6 +37,9 @@
         width: fit-content;
         margin: 0 auto;
     }
+    @media screen and (min-width:700px) and (max-width:1100px) {
+        padding: 12%;
+    }
 }
 
 .lightbox-close-button {
