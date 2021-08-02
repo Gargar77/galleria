@@ -34,15 +34,15 @@ class ArtworkViewer extends React.Component {
     }
     let navAnimation;
     if (this.props.direction === 'right') {
-        navAnimation ={animation:'left-in 200ms ease-out'}
+        navAnimation ={animation:'left-in 300ms ease-out'}
     } else {
-        navAnimation = {animation:'right-in 200ms ease-out'}
+        navAnimation = {animation:'right-in 300ms ease-out'}
     }
     if (this.props.isNavigating) {
         if (this.props.direction === 'right') {
-            navAnimation = {animation:'right-out 200ms ease-in forwards'}
+            navAnimation = {animation:'right-out 300ms ease-in forwards'}
         } else {
-            navAnimation = {animation:'left-out 200ms ease-in forwards'}
+            navAnimation = {animation:'left-out 300ms ease-in forwards'}
         }
     }
     return (

@@ -26,12 +26,12 @@ const FooterNav = ({artworks,update,activeId,navigate}) => {
            navigate(true,'left');
            window.setTimeout(()=> {
                update(id+1);
-           },300)
+           },400)
        } else if (direction === "prev" && id > 0){
             navigate(true,'right')           
             window.setTimeout(()=> {
                 update(id-1);
-            },300)
+            },400)
 
        }
     }
