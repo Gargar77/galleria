@@ -13,8 +13,8 @@ const Nav = ({activeArtwork,update}) => {
     return ( 
         <div className="nav-container">
             <nav className="main-nav">
-                <Link to="/" onClick={()=> update(null)}><Logo/></Link>
-                <Link to={activeArtwork === null ? "/artwork#0" : "/"}>
+                <Link to="/galleria" onClick={()=> update(null)}><Logo/></Link>
+                <Link to={activeArtwork === null ? "galleria/artwork#0" : "/galleria"}>
                     {button}
                 </Link>
             </nav>

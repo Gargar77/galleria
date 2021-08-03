@@ -14,7 +14,7 @@ class ArtworkReel extends React.Component {
     }
    
     constructArtThumbnail(data,id) {
-        return <Link key={id} to={`/artwork#${id}`} onClick={()=>this.props.update(id)}><ArtThumbnail data={data}/></Link>
+        return <Link key={id} to={`/galleria/artwork#${id}`} onClick={()=>this.props.update(id)}><ArtThumbnail data={data}/></Link>
     }
 
     render() {
