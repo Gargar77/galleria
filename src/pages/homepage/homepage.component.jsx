@@ -57,8 +57,8 @@
              <main className="homepage">
                  <Nav activeArtwork={this.state.activeArtworkId} update={this.updateActiveArtwork.bind(this)}/>
                 <Switch>
-                    <Route path="/" exact><ArtworkReel artworks={artworksData} update={this.updateActiveArtwork.bind(this)}/></Route>
-                    <Route path="/artwork">
+                    <Route path="/galleria" exact><ArtworkReel artworks={artworksData} update={this.updateActiveArtwork.bind(this)}/></Route>
+                    <Route path="/galleria/artwork">
                         <ArtworkViewer 
                             artworks={artworksData} 
                             activeId={this.state.activeArtworkId} 
