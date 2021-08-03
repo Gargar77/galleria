@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/galleria/static/css/main.4c3a1491.chunk.css",
+    "main.js": "/galleria/static/js/main.9021bf22.chunk.js",
+    "main.js.map": "/galleria/static/js/main.9021bf22.chunk.js.map",
+    "runtime-main.js": "/galleria/static/js/runtime-main.b800cb59.js",
+    "runtime-main.js.map": "/galleria/static/js/runtime-main.b800cb59.js.map",
+    "static/js/2.5be9ac20.chunk.js": "/galleria/static/js/2.5be9ac20.chunk.js",
+    "static/js/2.5be9ac20.chunk.js.map": "/galleria/static/js/2.5be9ac20.chunk.js.map",
+    "static/js/3.4e7b6ede.chunk.js": "/galleria/static/js/3.4e7b6ede.chunk.js",
+    "static/js/3.4e7b6ede.chunk.js.map": "/galleria/static/js/3.4e7b6ede.chunk.js.map",
+    "index.html": "/galleria/index.html",
+    "static/css/main.4c3a1491.chunk.css.map": "/galleria/static/css/main.4c3a1491.chunk.css.map",
+    "static/js/2.5be9ac20.chunk.js.LICENSE.txt": "/galleria/static/js/2.5be9ac20.chunk.js.LICENSE.txt",
+    "static/media/icon-back-button.53213882.svg": "/galleria/static/media/icon-back-button.53213882.svg",
+    "static/media/icon-next-button.b6581839.svg": "/galleria/static/media/icon-next-button.b6581839.svg",
+    "static/media/icon-view-image.85d6ffa1.svg": "/galleria/static/media/icon-view-image.85d6ffa1.svg",
+    "static/media/logo.91fd4221.svg": "/galleria/static/media/logo.91fd4221.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b800cb59.js",
+    "static/js/2.5be9ac20.chunk.js",
+    "static/css/main.4c3a1491.chunk.css",
+    "static/js/main.9021bf22.chunk.js"
+  ]
+}
