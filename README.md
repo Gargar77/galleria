@@ -1,4 +1,4 @@
-# Frontend Mentor - Galleria slideshow site solution
+# Galleria slideshow site
 
 This is a solution to the [Galleria slideshow site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/galleria-slideshow-site-tEA4pwsa6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
